@@ -1,12 +1,10 @@
-package com.datagenerator.dao;
+package com.datagenerator.bean;
 
-import java.util.Date;
-
-public class DataDao {
+public class Data {
     private String Accessed;
     private Integer visits;
 
-    public DataDao(String accessed, Integer visits) {
+    public Data(String accessed, Integer visits) {
         Accessed = accessed;
         this.visits = visits;
     }

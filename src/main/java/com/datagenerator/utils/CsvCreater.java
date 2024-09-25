@@ -1,7 +1,6 @@
 package com.datagenerator.utils;
 
-import com.datagenerator.Main;
-import com.datagenerator.dao.DataDao;
+import com.datagenerator.bean.Data;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,13 +26,13 @@ public class CsvCreater {
 
     public void createCsv() {
         try {
-            List<DataDao> dataList = new ArrayList<>();
+            List<Data> dataList = new ArrayList<>();
             logger.info("Data writing...");
             fileWriter.write("date_now" + "," + "visits" + "\n");
             while (true) {
-                DataDao dataDao = dataGenerator.DataObject();
-                dataList.add(dataDao);
-                for (DataDao dao : dataList) {
+                Data data = dataGenerator.DataObject();
+                dataList.add(data);
+                for (Data dao : dataList) {
                     String line = dao.getAccessed() + "," + dao.getVisits() + "\n";
                     logger.info("Insert Data ==> {} ", line);
                     fileWriter.write(line);

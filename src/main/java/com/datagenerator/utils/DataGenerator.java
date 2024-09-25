@@ -1,6 +1,6 @@
 package com.datagenerator.utils;
 
-import com.datagenerator.dao.DataDao;
+import com.datagenerator.bean.Data;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -24,10 +24,10 @@ public class DataGenerator {
         return visits;
     }
 
-    public DataDao DataObject() {
+    public Data DataObject() {
         String accessed = accessedGenerator();
         Integer visits = visitsGenerator();
-        DataDao data = new DataDao(accessed, visits);
+        Data data = new Data(accessed, visits);
         return data;
     }
 }
